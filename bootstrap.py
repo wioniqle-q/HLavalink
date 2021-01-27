@@ -36,10 +36,10 @@ class LavalinkBootstrap:
         self.download_command = f"curl -L https://ci.fredboat.com/repository/download/Lavalink_Build/8231:id/Lavalink.jar?guest=1 -o Lavalink.jar" if self.use_dev_lavalink else f"curl -L https://github.com/Frederikam/Lavalink/releases/download/{self._version_number}/Lavalink.jar -O"
         print(f"[INFO] Download command: {self.download_command}")
         
-        self.replace_port_command = 'sed -i "s|DYNAMICPORT|$PORT|" application.yml'
+        self.replace_port_command = 'sed -i "s|80|$PORT|" application.yml'
 
-        self.replace_password_command = 'sed -i "s|DYNAMICPASSWORD|$PASSWORD|" application.yml'
-        self.replace_password_command_no_password = 'sed -i "s|DYNAMICPASSWORD|youshallnotpass|" application.yml'
+        self.replace_password_command = 'sed -i "s|youshallnotpass|$PASSWORD|" application.yml'
+        self.replace_password_command_no_password = 'sed -i "s|youshallnotpass|youshallnotpass|" application.yml'
         
         self._additional_options = environ.get(
             "ADDITIONAL_JAVA_OPTIONS"
