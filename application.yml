@@ -1,12 +1,12 @@
 server:
-  port: 2333
+  port: DYNAMICPORT
   address: 0.0.0.0
 spring:
   main:
     banner-mode: log
 lavalink:
   server:
-    password: "wioniqle"
+    password: "DYNAMICPASSWORD"
     sources:
       youtube: true
       bandcamp: true
@@ -17,7 +17,7 @@ lavalink:
       http: true
       local: false
     bufferDurationMs: 400
-    youtubePlaylistLoadLimit: 3
+    youtubePlaylistLoadLimit: 5
     youtubeSearchEnabled: true
     soundcloudSearchEnabled: true
     gc-warnings: true
